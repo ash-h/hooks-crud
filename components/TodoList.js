@@ -14,7 +14,9 @@ const TodoList = () => {
                         <span className={`${todo.complete && "done"}`}
                             onDoubleClick={()=>dispatch({type: "TOGGLE_TODO", payload: todo})}
                         >{todo.text}</span>
-                        <button type="button">edit</button>
+                        <button type="button"
+                                onClick={()=> dispatch({type: "SET_CURRENT_TODO", payload: todo})}
+                        >edit</button>
                         <button type="button"
                                 onClick={()=> dispatch({type: "REMOVE_TODO", payload:todo})}
                         >
